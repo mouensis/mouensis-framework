@@ -1,0 +1,16 @@
+apply plugin: "maven-publish"
+
+publishing {
+    publications {
+        myPublish(MavenPublication){
+            groupId 'com.mouensis.framework'
+            artifactId project.name
+            version project.version
+            from components.java
+        }
+    }
+
+    repositories {
+        mavenLocal()
+    }
+}

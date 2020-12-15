@@ -1,0 +1,16 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        maven { url 'https://repo.spring.io/plugins-release' }
+    }
+}
+
+include "mouensis-core"
+include "mouensis-context"
+include "mouensis-web"
+
+rootProject.name = 'mouensis-framework'
+rootProject.children.each {project ->
+    project.buildFileName = "${project.name}.gradle"
+}
+
