@@ -1,0 +1,5 @@
+description = "Mounesis Core"
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa:2.4.1'
+}
