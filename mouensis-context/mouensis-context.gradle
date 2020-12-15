@@ -1,0 +1,5 @@
+description = "Mounesis Context"
+
+dependencies {
+    compile(project(":mouensis-web"))
+}
