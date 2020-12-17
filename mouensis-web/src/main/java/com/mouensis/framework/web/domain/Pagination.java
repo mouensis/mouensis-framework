@@ -21,10 +21,10 @@ public class Pagination implements Serializable {
     private static final long serialVersionUID = 6955013463218043412L;
 
     @Schema(title = "当前页码，从1开始", example = "1")
-    private Integer page;
+    private Integer page = 1;
 
     @Schema(title = "每页数据数量", example = "15")
-    private Integer size;
+    private Integer size = 15;
 
     @Schema(title = "排序，格式：(+|-)属性，+|-表示ASC|DESC", example = "+createTime")
     private List<String> sort;
