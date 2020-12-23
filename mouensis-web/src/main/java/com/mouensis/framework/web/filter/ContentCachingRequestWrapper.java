@@ -26,6 +26,8 @@ public class ContentCachingRequestWrapper extends HttpServletRequestWrapper {
     @Nullable
     private BufferedReader reader;
 
+    private boolean usingInputStream = false;
+
     /**
      * Create a new ContentCachingRequestWrapper for the given servlet request.
      *
@@ -33,7 +35,6 @@ public class ContentCachingRequestWrapper extends HttpServletRequestWrapper {
      */
     public ContentCachingRequestWrapper(HttpServletRequest request) {
         super(request);
-        writeCachedContent(request);
     }
 
     private void writeCachedContent(HttpServletRequest request) {
@@ -50,6 +51,7 @@ public class ContentCachingRequestWrapper extends HttpServletRequestWrapper {
     public ServletInputStream getInputStream() throws IOException {
         if (this.inputStream == null) {
             this.inputStream = new ContentCachingInputStream();
+            writeCachedContent((HttpServletRequest) super.getRequest());
         }
         return this.inputStream;
     }

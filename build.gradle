@@ -18,7 +18,7 @@ configure(allprojects) { project ->
     apply plugin: 'io.spring.dependency-management'
 
     ext {
-        set('springBootVersion', "2.3.4.RELEASE")
+        set('springBootVersion', "2.4.1")
         set('springDocVersion', "1.5.0")
     }
 
